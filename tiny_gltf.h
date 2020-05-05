@@ -1575,7 +1575,7 @@ class TinyGLTF {
 #if defined(__sparcv9)
 // Big endian
 #else
-#if (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__) || MINIZ_X86_OR_X64_CPU
+#if (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__) || defined(MINIZ_X86_OR_X64_CPU)
 #define TINYGLTF_LITTLE_ENDIAN 1
 #endif
 #endif
